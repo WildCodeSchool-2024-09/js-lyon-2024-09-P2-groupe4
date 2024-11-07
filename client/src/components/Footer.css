@@ -7,7 +7,7 @@
 }
 
 .imagesRS {
-  margin-left: 2em;
+  margin-left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +17,7 @@
   font-family: "Julee", cursive;
   font-weight: 400;
   font-style: normal;
+  font-size: 1em;
 }
 .libre-baskerville-regular {
   font-family: "Libre Baskerville", serif;
@@ -35,8 +36,14 @@
   font-weight: 400;
   font-style: italic;
 }
-@media screen and (width >= 1024px) {
+@media screen and (width >= 400px) {
   .footer {
     font-size: xx-large;
+  }
+  .imagesRS {
+    margin-left: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
