@@ -1,0 +1,15 @@
+#header {
+  background-color: black;
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+}
+#Burger {
+  width: 20%;
+  height: 25%;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#Logo {
+  width: 60%;
+}
