@@ -1,8 +1,8 @@
 function Header() {
   return (
     <header id="header">
-      <img id="Burger" src="src/image/menu.png" alt="burger" width={50} />
-      <img id="Logo" src="src/image/header.png" alt="logo" width={400} />
+      <img id="Burger" src="src\assets\images\menu.png" alt="burger" />
+      <img id="Logo" src="src\assets\images\header.png" alt="logo" />
     </header>
   );
 }
