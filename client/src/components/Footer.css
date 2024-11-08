@@ -1,0 +1,49 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fcf9db;
+  background-color: black;
+}
+
+.imagesRS {
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.julee-regular {
+  font-family: "Julee", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+}
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+@media screen and (width >= 400px) {
+  .footer {
+    font-size: xx-large;
+  }
+  .imagesRS {
+    margin-left: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

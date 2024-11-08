@@ -1,0 +1,49 @@
+#header {
+  background-color: black;
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+}
+#Burger {
+  width: 20%;
+  height: 25%;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#Logo {
+  width: 60%;
+}
+#image {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+}
+#Burger {
+  width: 20%;
+  height: 25%;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#Logo {
+  width: 60%;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  background-color: grey;
+  gap: 5px;
+  list-style-type: none;
+  font-family: "Julee", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  color: #fcf9db;
+}
+header {
+  background-color: black;
+}
+@media (max-width: 600px) {
+  #nav {
+    display: none;
+  }
+}
