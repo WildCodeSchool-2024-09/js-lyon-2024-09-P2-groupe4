@@ -1,6 +1,5 @@
-import ButtonsBar from "./ButtonsBar";
 import { useState } from "react";
-
+import ButtonsBar from "./ButtonsBar";
 import CardGame from "./CardGame";
 
 const game = {

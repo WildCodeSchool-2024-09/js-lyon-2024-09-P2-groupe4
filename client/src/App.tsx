@@ -2,7 +2,6 @@ import "./App.css";
 import "./ButtonsBar.css";
 import "./CardGame.css";
 import "./Footer.css";
-import FavoritesList from "./components/FavoritesList";
 import "./header.css";
 import FavoritesList from "./components/FavoritesList";
 import Footer from "./components/Footer";
