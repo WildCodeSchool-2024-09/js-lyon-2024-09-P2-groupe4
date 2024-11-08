@@ -2,7 +2,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <div className="footer">
+    <footer className="footer">
       <h2 className="julee-regular">© 2024 LES FANTASY WARRIORS</h2>
       <div className="imagesRS">
         <a href="https://www.facebook.com/">
@@ -16,7 +16,7 @@ function Footer() {
           <img id="twitter" src="src/assets/images/twitter.png" alt="twitter" />
         </a>
       </div>
-    </div>
+    </footer>
   );
 }
 export default Footer;
