@@ -12,6 +12,7 @@
   width: 100%;
   padding: 1rem;
 }
+
 body {
   display: flex;
   flex-direction: column;
@@ -30,7 +31,6 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   margin: 1rem;
-  width: 250px;
 }
 
 .card-game h2 {
@@ -39,7 +39,7 @@ body {
 }
 
 .card-game img {
-  width: 100%;
+  width: 20px;
   border-radius: 8px;
   margin-bottom: 0.5rem;
 }

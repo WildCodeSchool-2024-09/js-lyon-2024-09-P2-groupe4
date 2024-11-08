@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div>
+    <div className="">
       <h2>© 2024 LES FANTASY WARRIORS</h2>
       <img src="src/assets/images/facebook.png" alt="facebook" />
       <img src="src/assets/images/twitter.png" alt="twitter" />
