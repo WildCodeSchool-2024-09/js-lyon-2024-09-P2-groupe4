@@ -1,6 +1,6 @@
 import "./App.css";
 import "./header.css";
-import FavoritesList from "./components/FavoritesList";
+import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Header />
-      <FavoritesList />
+      <Outlet />
       <Footer />
     </>
   );
