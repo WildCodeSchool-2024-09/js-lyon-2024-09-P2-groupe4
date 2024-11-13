@@ -1,7 +1,7 @@
 .div-form {
   color: #fcf9db;
   text-align: center;
-  font-family: "Julee";
+  font-family: "Julee", sans-serif;
   padding-top: 5em;
 }
 
@@ -26,17 +26,17 @@ form {
 }
 
 .login-logo {
-    height: 12em;
-
+  height: 12em;
 }
 
-@media screen and (min-width:400px){
-    .login-logo {
-        height: 18em;
-    }
+@media screen and (min-width: 400px) {
+  .login-logo {
+    height: 18em;
+  }
 
-    .username, .password {
-        width: 20em;
-        background-color: #fcf9db;
-    }
+  .username,
+  .password {
+    width: 20em;
+    background-color: #fcf9db;
+  }
 }
