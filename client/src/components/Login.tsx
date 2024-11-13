@@ -1,4 +1,6 @@
 import { useState } from "react";
+import "./Login.css";
+import "../image/header.png";
 
 function Login() {
   //states
@@ -9,15 +11,16 @@ function Login() {
 
   // affichage
   return (
-    <div className="div-form">
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-        }}
-        className="form"
-      >
-        <div className="form-username">
-          <h1>USERNAME</h1>
+    <>
+      <div className="div-form">
+        <h1>Login Page</h1>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+          }}
+          className="form"
+        >
+          <h2>USERNAME</h2>
           <input
             type="text"
             className="username"
@@ -25,8 +28,6 @@ function Login() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-        </div>
-        <div className="form-password">
           <h2>Password</h2>
           <input
             type="password"
@@ -35,12 +36,16 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </div>
-        <button className="button-login" type="submit">
-          Se connecter
-        </button>
-      </form>
-    </div>
+          <button className="button-login" type="submit">
+            <img
+              className="login-logo"
+              src="src/assets/images/login.png"
+              alt=""
+            />
+          </button>
+        </form>
+      </div>
+    </>
   );
 }
 
