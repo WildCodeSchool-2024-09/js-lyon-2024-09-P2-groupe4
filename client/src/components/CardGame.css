@@ -2,9 +2,6 @@
   width: 300px;
   background-color: #000000;
 } */
-body {
-  background-color: #000000;
-}
 
 p {
   text-align: center;
@@ -33,7 +30,6 @@ p {
 }
 .card-game h2 {
   width: 150px;
-  font-family: ;
   color: #fcf9db;
   padding: 5px;
 }

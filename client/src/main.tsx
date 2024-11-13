@@ -10,6 +10,7 @@ import App from "./App";
 import DisplayGame from "./components/DisplayGame";
 import DisplayGames from "./components/DisplayGames";
 import FavoritesList from "./components/FavoritesList";
+import Login from "./components/Login";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/", // The root path
-        element: <App />, // Renders the App component for the home page
+        element: <Login />, // Renders the App component for the home page
       },
       {
         path: "/games",
