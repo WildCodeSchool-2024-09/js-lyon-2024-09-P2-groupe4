@@ -20,32 +20,32 @@ const DisplayGames = () => {
   }
   const displayedGames = games.slice(currentIndex, currentIndex + 4);
   return (
-    <div>
-      <h1>Liste des jeux</h1>
+    <div className="mainCard">
+      <h1 className="libre-baskerville-regular">Liste des jeux</h1>
       <div className="games-list">
         {displayedGames.map((game) => (
           <div key={game.id} className="game-card">
-            <h3>{game.title}</h3>
             <img
               src={game.thumbnail}
               alt={`Thumbnail of ${game.title}`}
               width="150"
             />
-            <p>{game.short_description}</p>
-            <p>Genre: {game.genre}</p>
-            <p>Platform: {game.platform}</p>
-            <p>Publisher: {game.publisher}</p>
-            <p>Release Date: {game.release_date}</p>
-            <p>
+            {/* <p>{game.short_description}</p> */}
+            {/* <p>Genre: {game.genre}</p> */}
+            {/* <p>Platform: {game.platform}</p> */}
+            {/* <p>Publisher: {game.publisher}</p> */}
+            {/* <p>Release Date: {game.release_date}</p> */}
+            {/* <p>
               Lien vers le jeu :{" "}
               <a href={game.game_url} target="_blank" rel="noopener noreferrer">
                 {game.game_url}
               </a>
-            </p>
+            </p> */}
+            <h3>{game.title}</h3>
           </div>
         ))}
       </div>
-      <div>
+      <div className="button">
         <button type="button" onClick={onPrevious}>
           Précédent
         </button>
