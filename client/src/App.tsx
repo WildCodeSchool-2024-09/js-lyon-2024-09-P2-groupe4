@@ -1,16 +1,16 @@
-import "./App.css";
 import "./header.css";
-import FavoritesList from "./components/FavoritesList";
+import "./components/Footer.css";
+import CardGame from "./components/CardGame";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
 function App() {
   return (
-    <>
+    <div>
       <Header />
-      <FavoritesList />
+      <CardGame />
       <Footer />
-    </>
+    </div>
   );
 }
 
