@@ -27,7 +27,8 @@
 #Logo {
   width: 60%;
 }
-ul {
+
+nav {
   display: flex;
   justify-content: center;
   background-color: grey;
@@ -38,7 +39,9 @@ ul {
   font-style: normal;
   font-size: 1em;
   color: #fcf9db;
+  padding: 10px;
 }
+
 header {
   background-color: black;
 }

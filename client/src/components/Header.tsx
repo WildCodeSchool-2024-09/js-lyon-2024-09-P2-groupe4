@@ -8,11 +8,9 @@ function Header() {
         <img id="Logo" src="src\assets\images\header.png" alt="logo" />
       </image>
       <nav id="nav">
-        <ul>
-          <Link to="/">Home</Link>
-          <Link to="/games">Jeux</Link>
-          <Link to="/favoris">Favoris</Link>
-        </ul>
+        <Link to="/">Home</Link>
+        <Link to="/games">Jeux</Link>
+        <Link to="/favoris">Favoris</Link>
       </nav>
     </header>
   );

@@ -1,5 +1,3 @@
-import { useState } from "react";
-import ButtonsBar from "./ButtonsBar";
 import CardGame from "./CardGame";
 
 // const game = {
@@ -18,12 +16,9 @@ import CardGame from "./CardGame";
 // };
 
 function FavoritesList() {
-  const [like, setLike] = useState(false);
-
   return (
     <>
       <CardGame />
-      <ButtonsBar like={like} setLike={setLike} />
     </>
   );
 }
