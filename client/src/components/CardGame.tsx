@@ -1,36 +1,10 @@
-import { useEffect, useState } from "react";
-import "./CardGame.css";
+import { useState } from "react";
+import { useGames } from "./GamesContext";
 
-interface Game {
-  id: number;
-  title: string;
-  thumbnail: string;
-  short_description: string;
-  game_url: string;
-  genre: string;
-  platform: string;
-  publisher: string;
-  developer: string;
-  release_date: string;
-  profile_url: string;
-}
 const CardGame = () => {
-  const [games, setGames] = useState<Game[]>([]);
+  const games = useGames();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [like, setLike] = useState(false);
-
-  useEffect(() => {
-    fetch(
-      "https://thingproxy.freeboard.io/fetch/https://www.mmobomb.com/api1/filter?tag=3d.mmorpg.fantasy.pvp&platform=pc",
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        if (Array.isArray(data)) {
-          setGames(data as Game[]);
-        }
-      })
-      .catch((error) => console.error("Error fetching game data:", error));
-  }, []);
   const onPrevious = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex > 0 ? prevIndex - 1 : games.length - 1,
