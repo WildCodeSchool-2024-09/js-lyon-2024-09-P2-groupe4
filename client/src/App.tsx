@@ -1,3 +1,5 @@
+import "./components/DisplayGames.css";
+import "./App.css";
 import "./header.css";
 import "./components/CardGame.css";
 import "./components/Footer.css";
@@ -10,11 +12,15 @@ function App() {
   return (
     <GamesProvider>
       <div>
-        <Header />
+        <header>
+          <Header />
+        </header>
         <main>
           <Outlet />
         </main>
-        <Footer />
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </GamesProvider>
   );
