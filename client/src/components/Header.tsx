@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <header>
@@ -7,9 +9,9 @@ function Header() {
       </image>
       <nav id="nav">
         <ul>
-          <li>Home</li>
-          <li>Jeux</li>
-          <li>Favoris</li>
+          <Link to="/">Home</Link>
+          <Link to="/games">Jeux</Link>
+          <Link to="/favoris">Favoris</Link>
         </ul>
       </nav>
     </header>
