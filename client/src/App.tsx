@@ -1,4 +1,3 @@
-import "./App.css";
 import "./header.css";
 import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
@@ -6,13 +5,13 @@ import Header from "./components/Header";
 
 function App() {
   return (
-    <>
+    <div>
       <Header />
       <main>
         <Outlet />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
