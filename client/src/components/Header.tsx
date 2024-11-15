@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <header>
@@ -6,11 +8,9 @@ function Header() {
         <img id="Logo" src="src\assets\images\header.png" alt="logo" />
       </image>
       <nav id="nav">
-        <ul>
-          <li>Home</li>
-          <li>Jeux</li>
-          <li>Favoris</li>
-        </ul>
+        <Link to="/">Home</Link>
+        <Link to="/games">Jeux</Link>
+        <Link to="/favoris">Favoris</Link>
       </nav>
     </header>
   );

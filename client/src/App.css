@@ -1,5 +1,20 @@
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+}
+
+main {
+  background-color: #000000;
+  height: 100vh;
+}
+
+#buttons-bar {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  bottom: 10px;
 }

@@ -3,16 +3,7 @@
   display: grid;
   grid-template-columns: 2fr 3fr 1fr;
 }
-#Burger {
-  width: 20%;
-  height: 25%;
-  margin-top: 10px;
-  margin-left: 10px;
-}
 
-#Logo {
-  width: 60%;
-}
 #image {
   display: grid;
   grid-template-columns: 2fr 3fr 1fr;
@@ -25,9 +16,12 @@
 }
 
 #Logo {
+  display: flex;
+  justify-content: center;
   width: 60%;
 }
-ul {
+
+nav {
   display: flex;
   justify-content: center;
   background-color: grey;
@@ -38,12 +32,20 @@ ul {
   font-style: normal;
   font-size: 1em;
   color: #fcf9db;
+  padding: 10px;
 }
+
 header {
   background-color: black;
 }
 @media (max-width: 600px) {
   #nav {
     display: none;
+  }
+  #Burger {
+    width: 20%;
+    height: 25%;
+    margin-top: 10px;
+    margin-left: 10px;
   }
 }
