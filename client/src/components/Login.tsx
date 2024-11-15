@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Login.css";
-import "../image/header.png";
+import "../assets/images/login.png";
 
 function Login() {
   //states
