@@ -29,14 +29,19 @@ form {
   height: 12em;
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 600px) {
   .login-logo {
-    height: 18em;
+    height: 12em;
   }
 
   .username,
   .password {
     width: 20em;
     background-color: #fcf9db;
+  }
+}
+@media (min-width: 1200px) {
+  .login-logo {
+    height: 12em;
   }
 }
