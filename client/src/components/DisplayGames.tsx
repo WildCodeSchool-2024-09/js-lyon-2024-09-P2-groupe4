@@ -1,21 +1,21 @@
 import { useState } from "react";
-import DisplayGame from "./DisplayGame"; // Assurez-vous d'importer le composant DisplayGame
+import DisplayGame from "./DisplayGame";
 import { useGames } from "./GamesContext";
 
 const DisplayGames = () => {
   const { games, selectedGameId, setSelectedGameId, isLoading, error } =
-    useGames(); // Destructure the context
+    useGames();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const onPrevious = () => {
-    setCurrentIndex((currentIndex) =>
-      currentIndex - 4 < 0 ? games.length - 4 : currentIndex - 4,
+    setCurrentIndex((prevIndex) =>
+      prevIndex - 4 < 0 ? games.length - 4 : prevIndex - 4,
     );
   };
 
   const onNext = () => {
-    setCurrentIndex((currentIndex) =>
-      currentIndex + 4 >= games.length ? 0 : currentIndex + 4,
+    setCurrentIndex((prevIndex) =>
+      prevIndex + 4 >= games.length ? 0 : prevIndex + 4,
     );
   };
 
@@ -34,16 +34,25 @@ const DisplayGames = () => {
     return <DisplayGame selectedGameId={selectedGameId} />;
   }
 
+  // Fonction pour gérer le clic et la sélection au clavier
+  const handleSelection = (gameId: number) => {
+    setSelectedGameId(gameId);
+  };
+
   return (
     <div className="mainCard">
       <h1 className="libre-baskerville-regular">Liste des jeux</h1>
       <div className="games-list">
         {displayedGames.map((game) => (
-          <button
+          <div
             key={game.id}
             className="game-card"
-            onClick={() => setSelectedGameId(game.id)} // On clique sur l'image, on sélectionne le jeu
-            type="button" // Ajout explicite du type pour éviter l'avertissement
+            onClick={() => handleSelection(game.id)} // Clic souris
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                handleSelection(game.id); // Interaction clavier (Enter ou Espace)
+              }
+            }}
           >
             <img
               src={game.thumbnail}
@@ -51,7 +60,7 @@ const DisplayGames = () => {
               width="150"
             />
             <h3>{game.title}</h3>
-          </button>
+          </div>
         ))}
       </div>
       <div className="button">

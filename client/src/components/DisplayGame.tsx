@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useGames } from "./GamesContext";
 
 const DisplayGame = ({ selectedGameId }: { selectedGameId: number }) => {
   const { games, setSelectedGameId } = useGames();
+  const [like, setLike] = useState(false);
   const displayedGame = games.find((game) => game.id === selectedGameId);
 
   if (!displayedGame) {
@@ -46,6 +48,14 @@ const DisplayGame = ({ selectedGameId }: { selectedGameId: number }) => {
           >
             Jouer au jeu
           </a>
+          <button
+            id="like-button"
+            type="button"
+            onClick={() => setLike(!like)}
+            aria-label={like ? "Retirer du favori" : "Ajouter aux favoris"}
+          >
+            {like ? "🧡" : "🤍"}
+          </button>
         </p>
       </div>
     </div>
