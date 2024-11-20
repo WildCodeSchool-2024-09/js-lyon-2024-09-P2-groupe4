@@ -7,10 +7,11 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
-import DisplayGame from "./components/DisplayGame";
+
 import DisplayGames from "./components/DisplayGames";
 import FavoritesList from "./components/FavoritesList";
 import Login from "./components/Login";
+// import DisplayGame from "./components/DisplayGame";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -34,10 +35,10 @@ const router = createBrowserRouter([
         path: "/games",
         element: <DisplayGames />,
       },
-      {
-        path: "/game",
-        element: <DisplayGame />,
-      },
+      // {
+      //   path: "/game/id:",
+      //   element: <DisplayGame />,
+      // },
       {
         path: "/favoris",
         element: <FavoritesList />,
