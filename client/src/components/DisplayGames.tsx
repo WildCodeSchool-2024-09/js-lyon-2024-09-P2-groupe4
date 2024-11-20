@@ -1,48 +1,57 @@
-import "react";
 import { useState } from "react";
+import DisplayGame from "./DisplayGame"; // Assurez-vous d'importer le composant DisplayGame
 import { useGames } from "./GamesContext";
 
 const DisplayGames = () => {
-  const games = useGames();
+  const { games, selectedGameId, setSelectedGameId, isLoading, error } =
+    useGames(); // Destructure the context
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const onPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex - 4 < 0 ? games.length - 4 : prevIndex - 4,
+    setCurrentIndex((currentIndex) =>
+      currentIndex - 4 < 0 ? games.length - 4 : currentIndex - 4,
     );
   };
+
   const onNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex + 4 >= games.length ? 0 : prevIndex + 4,
+    setCurrentIndex((currentIndex) =>
+      currentIndex + 4 >= games.length ? 0 : currentIndex + 4,
     );
   };
-  if (games.length === 0) {
+
+  if (isLoading) {
     return <p>Loading games...</p>;
   }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
   const displayedGames = games.slice(currentIndex, currentIndex + 4);
+
+  // Si un jeu est sélectionné, afficher le composant DisplayGame
+  if (selectedGameId !== null) {
+    return <DisplayGame selectedGameId={selectedGameId} />;
+  }
+
   return (
     <div className="mainCard">
       <h1 className="libre-baskerville-regular">Liste des jeux</h1>
       <div className="games-list">
         {displayedGames.map((game) => (
-          <div key={game.id} className="game-card">
+          <button
+            key={game.id}
+            className="game-card"
+            onClick={() => setSelectedGameId(game.id)} // On clique sur l'image, on sélectionne le jeu
+            type="button" // Ajout explicite du type pour éviter l'avertissement
+          >
             <img
               src={game.thumbnail}
               alt={`Thumbnail of ${game.title}`}
               width="150"
             />
-            {/* <p>{game.short_description}</p> */}
-            {/* <p>Genre: {game.genre}</p> */}
-            {/* <p>Platform: {game.platform}</p> */}
-            {/* <p>Publisher: {game.publisher}</p> */}
-            {/* <p>Release Date: {game.release_date}</p> */}
-            {/* <p>
-              Lien vers le jeu :{" "}
-              <a href={game.game_url} target="_blank" rel="noopener noreferrer">
-                {game.game_url}
-              </a>
-            </p> */}
             <h3>{game.title}</h3>
-          </div>
+          </button>
         ))}
       </div>
       <div className="button">
@@ -56,4 +65,5 @@ const DisplayGames = () => {
     </div>
   );
 };
+
 export default DisplayGames;
