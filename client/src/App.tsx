@@ -1,4 +1,5 @@
 import "./components/DisplayGames.css";
+import "./components/DisplayGame.css";
 import "./App.css";
 import "./header.css";
 import "./components/CardGame.css";

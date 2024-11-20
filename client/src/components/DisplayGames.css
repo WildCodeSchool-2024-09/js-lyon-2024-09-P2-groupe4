@@ -4,6 +4,8 @@ h1.libre-baskerville-regular {
   font-style: normal;
   margin-top: 0;
   font-size: x-large;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 .mainCard {
   background-color: black;
@@ -20,12 +22,24 @@ div.game-card {
   margin-right: 1em;
   gap: 1em;
   width: 10em;
+  overflow: hidden;
 }
+
 div.game-card img {
   height: auto;
   border-radius: 10%;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+div.game-card:hover img {
+  transform: scale(1.1);
 }
 
+div.button {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
 div.button {
   display: flex;
   justify-content: space-evenly;
@@ -59,10 +73,8 @@ div.games-list {
   }
   h1.libre-baskerville-regular {
     font-size: xx-large;
-  }
-
-  h1.libre-baskerville-regular {
     padding-top: 1em;
+    margin-top: 0;
   }
 
   button {
