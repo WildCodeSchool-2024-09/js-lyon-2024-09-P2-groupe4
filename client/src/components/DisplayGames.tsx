@@ -30,17 +30,6 @@ const DisplayGames = () => {
               alt={`Thumbnail of ${game.title}`}
               width="150"
             />
-            {/* <p>{game.short_description}</p> */}
-            {/* <p>Genre: {game.genre}</p> */}
-            {/* <p>Platform: {game.platform}</p> */}
-            {/* <p>Publisher: {game.publisher}</p> */}
-            {/* <p>Release Date: {game.release_date}</p> */}
-            {/* <p>
-              Lien vers le jeu :{" "}
-              <a href={game.game_url} target="_blank" rel="noopener noreferrer">
-                {game.game_url}
-              </a>
-            </p> */}
             <h3>{game.title}</h3>
           </div>
         ))}

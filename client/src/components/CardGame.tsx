@@ -1,24 +1,42 @@
-import { useState } from "react";
+import { useFavoritesGames } from "../contexts/FavoritesGamesContext";
+import { useIsFavorite } from "../contexts/IsFavoriteContext";
 import { useGames } from "./GamesContext";
 
-const CardGame = () => {
+interface GameProps {
+  game: {
+    id: number;
+    title: string;
+    thumbnail: string;
+    short_description: string;
+    game_url: string;
+    genre: string;
+    platform: string;
+    publisher: string;
+    developer: string;
+    release_date: string;
+    profile_url: string;
+  };
+}
+
+const CardGame = ({ game }: GameProps) => {
   const games = useGames();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [like, setLike] = useState(false);
-  const onPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex > 0 ? prevIndex - 1 : games.length - 1,
-    );
-  };
-  const onNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex < games.length - 1 ? prevIndex + 1 : 0,
-    );
-  };
+
+  const { isFavorite, setIsFavorite } = useIsFavorite();
+  const { favoritesGames, setFavoritesGames } = useFavoritesGames();
+
+  function toggleFavorite() {
+    if (isFavorite === false) {
+      setIsFavorite(true);
+      setFavoritesGames([...favoritesGames, game.id]);
+    } else {
+      setIsFavorite(false);
+      setFavoritesGames(favoritesGames.filter((id) => id !== game.id));
+    }
+  }
+
   if (games.length === 0) {
     return <p>Loading games...</p>;
   }
-  const game = games[currentIndex];
   return (
     <div className="card-game">
       <div id="game-info">
@@ -40,14 +58,8 @@ const CardGame = () => {
         </p>
       </div>
       <div id="buttons-bar">
-        <button className="nav-buttons" type="button" onClick={onPrevious}>
-          Précédent
-        </button>
-        <button className="nav-buttons" type="button" onClick={onNext}>
-          Suivant
-        </button>
-        <button id="like-button" type="button" onClick={() => setLike(!like)}>
-          {like ? "🧡" : "🤍"}
+        <button id="like-button" type="button" onClick={toggleFavorite}>
+          {isFavorite ? "🧡" : "🤍"}
         </button>
       </div>
     </div>
