@@ -61,7 +61,13 @@ export const GamesProvider: React.FC<{ children: React.ReactNode }> = ({
 
   return (
     <GamesContext.Provider
-      value={{ games, selectedGameId, setSelectedGameId, isLoading, error }}
+      value={{
+        games,
+        selectedGameId,
+        setSelectedGameId,
+        isLoading,
+        error,
+      }}
     >
       {children}
     </GamesContext.Provider>

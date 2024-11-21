@@ -1,31 +1,23 @@
-import { useState } from "react";
-import { useGames } from "./GamesContext";
+import { useFavoritesGames } from "../contexts/FavoritesGamesContext";
 
-const CardGame = () => {
-  const { games } = useGames(); // Assurez-vous de destructurer l'objet retourné par useGames
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [like, setLike] = useState(false);
-
-  // Fonction pour naviguer vers le jeu précédent
-  const onPrevious = () => {
-    setCurrentIndex((currentIndex) =>
-      currentIndex > 0 ? currentIndex - 1 : games.length - 1,
-    );
+interface GameProps {
+  game: {
+    id: number;
+    title: string;
+    thumbnail: string;
+    short_description: string;
+    game_url: string;
+    genre: string;
+    platform: string;
+    publisher: string;
+    developer: string;
+    release_date: string;
+    profile_url: string;
   };
+}
 
-  // Fonction pour naviguer vers le jeu suivant
-  const onNext = () => {
-    setCurrentIndex((currentIndex) =>
-      currentIndex < games.length - 1 ? currentIndex + 1 : 0,
-    );
-  };
-
-  // Si la liste des jeux est vide, afficher un message de chargement
-  if (games.length === 0) {
-    return <p>Loading games...</p>;
-  }
-
-  const game = games[currentIndex]; // Accéder au jeu actuellement sélectionné
+const CardGame = ({ game }: GameProps) => {
+  const { favoritesGames, setFavoritesGames } = useFavoritesGames();
 
   return (
     <div className="card-game">
@@ -49,28 +41,13 @@ const CardGame = () => {
       </div>
       <div id="buttons-bar">
         <button
-          className="nav-buttons"
+          id="remove-button"
           type="button"
-          onClick={onPrevious}
-          aria-label="Jeu précédent"
+          onClick={() => {
+            setFavoritesGames(favoritesGames.filter((id) => id !== game.id));
+          }}
         >
-          Précédent
-        </button>
-        <button
-          className="nav-buttons"
-          type="button"
-          onClick={onNext}
-          aria-label="Jeu suivant"
-        >
-          Suivant
-        </button>
-        <button
-          id="like-button"
-          type="button"
-          onClick={() => setLike(!like)}
-          aria-label={like ? "Retirer du favori" : "Ajouter aux favoris"}
-        >
-          {like ? "🧡" : "🤍"}
+          Retirer des favoris
         </button>
       </div>
     </div>

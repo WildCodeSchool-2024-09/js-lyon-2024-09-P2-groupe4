@@ -1,10 +1,23 @@
 import { useState } from "react";
+import { useFavoritesGames } from "../contexts/FavoritesGamesContext";
 import { useGames } from "./GamesContext";
 
 const DisplayGame = ({ selectedGameId }: { selectedGameId: number }) => {
   const { games, setSelectedGameId } = useGames();
-  const [like, setLike] = useState(false);
   const displayedGame = games.find((game) => game.id === selectedGameId);
+  const { favoritesGames, setFavoritesGames } = useFavoritesGames();
+
+  const [toggleFavorite, setToggleFavorite] = useState(false);
+
+  function toggle() {
+    if (toggleFavorite === false) {
+      setToggleFavorite(true);
+      setFavoritesGames([...favoritesGames, selectedGameId]);
+    } else {
+      setToggleFavorite(false);
+      setFavoritesGames(favoritesGames.filter((id) => id !== selectedGameId));
+    }
+  }
 
   if (!displayedGame) {
     return <p>Jeu non trouvé</p>;
@@ -51,10 +64,12 @@ const DisplayGame = ({ selectedGameId }: { selectedGameId: number }) => {
           <button
             id="like-button"
             type="button"
-            onClick={() => setLike(!like)}
-            aria-label={like ? "Retirer du favori" : "Ajouter aux favoris"}
+            onClick={toggle}
+            aria-label={
+              toggleFavorite ? "Retirer du favori" : "Ajouter aux favoris"
+            }
           >
-            {like ? "🧡" : "🤍"}
+            {toggleFavorite ? "🧡" : "🤍"}
           </button>
         </p>
       </div>

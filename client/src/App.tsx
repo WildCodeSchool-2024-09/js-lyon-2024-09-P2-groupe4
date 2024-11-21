@@ -8,22 +8,25 @@ import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import { GamesProvider } from "./components/GamesContext";
 import Header from "./components/Header";
+import { FavoritesGamesProvider } from "./contexts/FavoritesGamesContext";
 
 function App() {
   return (
-    <GamesProvider>
-      <div>
-        <header>
-          <Header />
-        </header>
-        <main>
-          <Outlet />
-        </main>
-        <footer>
-          <Footer />
-        </footer>
-      </div>
-    </GamesProvider>
+    <FavoritesGamesProvider>
+      <GamesProvider>
+        <div>
+          <header>
+            <Header />
+          </header>
+          <main>
+            <Outlet />
+          </main>
+          <footer>
+            <Footer />
+          </footer>
+        </div>
+      </GamesProvider>
+    </FavoritesGamesProvider>
   );
 }
 export default App;
