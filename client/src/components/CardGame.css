@@ -24,6 +24,12 @@ p {
   gap: 5px;
 }
 
+#remove-button {
+  /* background-color: black;
+  border: none; */
+  font-size: 25px;
+}
+
 /* Desktop  */
 @media screen and (width >= 400px) {
   .card-game {

@@ -1,4 +1,5 @@
 import "./components/DisplayGames.css";
+import "./components/DisplayGame.css";
 import "./App.css";
 import "./header.css";
 import "./components/CardGame.css";
@@ -8,27 +9,24 @@ import Footer from "./components/Footer";
 import { GamesProvider } from "./components/GamesContext";
 import Header from "./components/Header";
 import { FavoritesGamesProvider } from "./contexts/FavoritesGamesContext";
-import { IsFavoriteProvider } from "./contexts/IsFavoriteContext";
 
 function App() {
   return (
-    <IsFavoriteProvider>
-      <FavoritesGamesProvider>
-        <GamesProvider>
-          <div>
-            <header>
-              <Header />
-            </header>
-            <main>
-              <Outlet />
-            </main>
-            <footer>
-              <Footer />
-            </footer>
-          </div>
-        </GamesProvider>
-      </FavoritesGamesProvider>
-    </IsFavoriteProvider>
+    <FavoritesGamesProvider>
+      <GamesProvider>
+        <div>
+          <header>
+            <Header />
+          </header>
+          <main>
+            <Outlet />
+          </main>
+          <footer>
+            <Footer />
+          </footer>
+        </div>
+      </GamesProvider>
+    </FavoritesGamesProvider>
   );
 }
 export default App;

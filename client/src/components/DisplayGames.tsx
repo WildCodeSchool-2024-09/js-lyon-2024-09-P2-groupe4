@@ -1,30 +1,59 @@
-import "react";
 import { useState } from "react";
+import DisplayGame from "./DisplayGame";
 import { useGames } from "./GamesContext";
 
 const DisplayGames = () => {
-  const games = useGames();
+  const { games, selectedGameId, setSelectedGameId, isLoading, error } =
+    useGames();
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const onPrevious = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex - 4 < 0 ? games.length - 4 : prevIndex - 4,
     );
   };
+
   const onNext = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex + 4 >= games.length ? 0 : prevIndex + 4,
     );
   };
-  if (games.length === 0) {
+
+  if (isLoading) {
     return <p>Loading games...</p>;
   }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
   const displayedGames = games.slice(currentIndex, currentIndex + 4);
+
+  // Si un jeu est sélectionné, afficher le composant DisplayGame
+  if (selectedGameId !== null) {
+    return <DisplayGame selectedGameId={selectedGameId} />;
+  }
+
+  // Fonction pour gérer le clic et la sélection au clavier
+  const handleSelection = (gameId: number) => {
+    setSelectedGameId(gameId);
+  };
+
   return (
     <div className="mainCard">
       <h1 className="libre-baskerville-regular">Liste des jeux</h1>
       <div className="games-list">
         {displayedGames.map((game) => (
-          <div key={game.id} className="game-card">
+          <div
+            key={game.id}
+            className="game-card"
+            onClick={() => handleSelection(game.id)} // Clic souris
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                handleSelection(game.id); // Interaction clavier (Enter ou Espace)
+              }
+            }}
+          >
             <img
               src={game.thumbnail}
               alt={`Thumbnail of ${game.title}`}
@@ -45,4 +74,5 @@ const DisplayGames = () => {
     </div>
   );
 };
+
 export default DisplayGames;

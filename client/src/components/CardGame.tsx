@@ -1,6 +1,4 @@
 import { useFavoritesGames } from "../contexts/FavoritesGamesContext";
-import { useIsFavorite } from "../contexts/IsFavoriteContext";
-import { useGames } from "./GamesContext";
 
 interface GameProps {
   game: {
@@ -19,24 +17,8 @@ interface GameProps {
 }
 
 const CardGame = ({ game }: GameProps) => {
-  const games = useGames();
-
-  const { isFavorite, setIsFavorite } = useIsFavorite();
   const { favoritesGames, setFavoritesGames } = useFavoritesGames();
 
-  function toggleFavorite() {
-    if (isFavorite === false) {
-      setIsFavorite(true);
-      setFavoritesGames([...favoritesGames, game.id]);
-    } else {
-      setIsFavorite(false);
-      setFavoritesGames(favoritesGames.filter((id) => id !== game.id));
-    }
-  }
-
-  if (games.length === 0) {
-    return <p>Loading games...</p>;
-  }
   return (
     <div className="card-game">
       <div id="game-info">
@@ -58,11 +40,18 @@ const CardGame = ({ game }: GameProps) => {
         </p>
       </div>
       <div id="buttons-bar">
-        <button id="like-button" type="button" onClick={toggleFavorite}>
-          {isFavorite ? "🧡" : "🤍"}
+        <button
+          id="remove-button"
+          type="button"
+          onClick={() => {
+            setFavoritesGames(favoritesGames.filter((id) => id !== game.id));
+          }}
+        >
+          Retirer des favoris
         </button>
       </div>
     </div>
   );
 };
+
 export default CardGame;
