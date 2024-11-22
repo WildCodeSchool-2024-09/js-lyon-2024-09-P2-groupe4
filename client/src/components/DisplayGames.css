@@ -23,15 +23,15 @@ div.game-card {
   gap: 1em;
   width: 10em;
   overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 div.game-card img {
   height: auto;
   border-radius: 10%;
-  transition: transform 0.3s ease-in-out;
-  cursor: pointer;
 }
-div.game-card:hover img {
+div.game-card:hover {
   transform: scale(1.1);
 }
 
@@ -60,6 +60,7 @@ div.games-list {
     margin-left: 15em;
     margin-right: 15em;
     margin-top: 2em;
+    gap: 5em;
   }
   div.game-card {
     border-radius: 10%;
