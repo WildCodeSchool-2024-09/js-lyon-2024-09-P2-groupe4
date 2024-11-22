@@ -15,13 +15,21 @@ p {
   position: relative;
   border: 1px #fcf9db, solid;
   box-shadow: -3px 0px 0px #fcf9db;
+  width: 100%;
+  height: auto;
 }
-
+h1 {
+  position: static;
+  color: #fcf9db;
+}
 #game-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
+}
+div#game-info {
+  padding-bottom: 50px;
 }
 
 #remove-button {
