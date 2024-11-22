@@ -1,24 +1,24 @@
-import { useState } from "react";
-import { useGames } from "./GamesContext";
+import { useFavoritesGames } from "../contexts/FavoritesGamesContext";
 
-const CardGame = () => {
-  const games = useGames();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [like, setLike] = useState(false);
-  const onPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex > 0 ? prevIndex - 1 : games.length - 1,
-    );
+interface GameProps {
+  game: {
+    id: number;
+    title: string;
+    thumbnail: string;
+    short_description: string;
+    game_url: string;
+    genre: string;
+    platform: string;
+    publisher: string;
+    developer: string;
+    release_date: string;
+    profile_url: string;
   };
-  const onNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex < games.length - 1 ? prevIndex + 1 : 0,
-    );
-  };
-  if (games.length === 0) {
-    return <p>Loading games...</p>;
-  }
-  const game = games[currentIndex];
+}
+
+const CardGame = ({ game }: GameProps) => {
+  const { favoritesGames, setFavoritesGames } = useFavoritesGames();
+
   return (
     <div className="card-game">
       <div id="game-info">
@@ -37,20 +37,23 @@ const CardGame = () => {
           <a href={game.game_url} target="_blank" rel="noopener noreferrer">
             Lien vers le jeu
           </a>
+          <div id="buttons-bar">
+            <button
+              id="remove-button"
+              type="button"
+              onClick={() => {
+                setFavoritesGames(
+                  favoritesGames.filter((id) => id !== game.id),
+                );
+              }}
+            >
+              Retirer des favoris
+            </button>
+          </div>
         </p>
-      </div>
-      <div id="buttons-bar">
-        <button className="nav-buttons" type="button" onClick={onPrevious}>
-          Précédent
-        </button>
-        <button className="nav-buttons" type="button" onClick={onNext}>
-          Suivant
-        </button>
-        <button id="like-button" type="button" onClick={() => setLike(!like)}>
-          {like ? "🧡" : "🤍"}
-        </button>
       </div>
     </div>
   );
 };
+
 export default CardGame;

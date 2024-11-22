@@ -1,46 +1,64 @@
-import "react";
 import { useState } from "react";
+import DisplayGame from "./DisplayGame";
 import { useGames } from "./GamesContext";
 
 const DisplayGames = () => {
-  const games = useGames();
+  const { games, selectedGameId, setSelectedGameId, isLoading, error } =
+    useGames();
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const onPrevious = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex - 4 < 0 ? games.length - 4 : prevIndex - 4,
     );
   };
+
   const onNext = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex + 4 >= games.length ? 0 : prevIndex + 4,
     );
   };
-  if (games.length === 0) {
+
+  if (isLoading) {
     return <p>Loading games...</p>;
   }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
   const displayedGames = games.slice(currentIndex, currentIndex + 4);
+
+  // Si un jeu est sélectionné, afficher le composant DisplayGame
+  if (selectedGameId !== null) {
+    return <DisplayGame selectedGameId={selectedGameId} />;
+  }
+
+  // Fonction pour gérer le clic et la sélection au clavier
+  const handleSelection = (gameId: number) => {
+    setSelectedGameId(gameId);
+  };
+
   return (
     <div className="mainCard">
       <h1 className="libre-baskerville-regular">Liste des jeux</h1>
       <div className="games-list">
         {displayedGames.map((game) => (
-          <div key={game.id} className="game-card">
+          <div
+            key={game.id}
+            className="game-card"
+            onClick={() => handleSelection(game.id)} // Clic souris
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                handleSelection(game.id); // Interaction clavier (Enter ou Espace)
+              }
+            }}
+          >
             <img
               src={game.thumbnail}
               alt={`Thumbnail of ${game.title}`}
               width="150"
             />
-            {/* <p>{game.short_description}</p> */}
-            {/* <p>Genre: {game.genre}</p> */}
-            {/* <p>Platform: {game.platform}</p> */}
-            {/* <p>Publisher: {game.publisher}</p> */}
-            {/* <p>Release Date: {game.release_date}</p> */}
-            {/* <p>
-              Lien vers le jeu :{" "}
-              <a href={game.game_url} target="_blank" rel="noopener noreferrer">
-                {game.game_url}
-              </a>
-            </p> */}
             <h3>{game.title}</h3>
           </div>
         ))}
@@ -56,4 +74,5 @@ const DisplayGames = () => {
     </div>
   );
 };
+
 export default DisplayGames;
