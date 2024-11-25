@@ -63,7 +63,7 @@ function Login() {
         <button className="button-login" type="submit">
           <img
             className="login-logo"
-            src="/assets/images/login.png" // Utilisation du chemin relatif dans public
+            src="src/assets/images/login.png" // Utilisation du chemin relatif dans public
             alt="Logo de connexion"
           />
         </button>

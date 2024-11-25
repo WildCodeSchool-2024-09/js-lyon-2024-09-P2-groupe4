@@ -17,6 +17,7 @@ form {
 .username,
 .password {
   height: 3em;
+  background-color: #fcf9db;
 }
 
 .button-login {
@@ -37,7 +38,6 @@ form {
   .username,
   .password {
     width: 20em;
-    background-color: #fcf9db;
   }
 }
 @media (min-width: 1200px) {
