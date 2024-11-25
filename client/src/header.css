@@ -1,51 +1,69 @@
-#header {
-  background-color: black;
-  display: grid;
-  grid-template-columns: 2fr 3fr 1fr;
-}
-
-#image {
-  display: grid;
-  grid-template-columns: 2fr 3fr 1fr;
-}
-#Burger {
-  width: 20%;
-  height: 25%;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
-#Logo {
+div#logo {
   display: flex;
   justify-content: center;
-  width: 60%;
+  margin-top: 20px;
 }
-
-nav {
+#logo img {
+  width: 250px;
+}
+img#home {
+  width: 50px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+img#favoris {
+  width: 70px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+img#logout {
+  width: 60px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+#logout:hover {
+  transform: scale(1.1);
+}
+#favoris:hover {
+  transform: scale(1.1);
+}
+#home:hover {
+  transform: scale(1.1);
+}
+#nav {
+  border: 2px solid, #fcf9db;
+  border-radius: 5em;
   display: flex;
   justify-content: center;
-  background-color: grey;
-  gap: 5px;
-  list-style-type: none;
-  font-family: "Julee", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1em;
-  color: #fcf9db;
-  padding: 10px;
+  align-items: center;
+  gap: 1em;
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
 }
 
-header {
-  background-color: black;
+a {
+  padding-right: 0px;
 }
-@media (max-width: 600px) {
-  #nav {
-    display: none;
+@media screen and (min-width: 1280px) {
+  img#home {
+    width: 100px;
   }
-  #Burger {
-    width: 20%;
-    height: 25%;
-    margin-top: 10px;
-    margin-left: 10px;
+  img#favoris {
+    width: 140px;
+  }
+  img#logout {
+    width: 120px;
+  }
+  #logo img {
+    width: 500px;
+  }
+  #nav {
+    margin-left: 450px;
+    margin-right: 450px;
   }
 }
