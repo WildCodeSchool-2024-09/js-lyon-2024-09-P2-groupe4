@@ -1,16 +1,10 @@
 .footer {
   display: flex;
   justify-content: center;
-  align-items: center;
   color: #fcf9db;
   background-color: black;
   padding-top: 50px;
   padding-bottom: 50px;
-}
-.footer h2 {
-  display: flex;
-  align-content: flex-end;
-  align-items: center;
 }
 
 .imagesRS {
