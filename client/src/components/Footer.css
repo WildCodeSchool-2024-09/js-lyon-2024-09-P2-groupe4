@@ -7,6 +7,11 @@
   padding-top: 50px;
   padding-bottom: 50px;
 }
+.footer h2 {
+  display: flex;
+  align-content: flex-end;
+  align-items: center;
+}
 
 .imagesRS {
   margin-left: 0;
