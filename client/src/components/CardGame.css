@@ -5,18 +5,18 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.8em;
+  margin-bottom: 20px;
   border-radius: 20px;
   color: #fcf9db;
   padding: 0.5em;
   width: 300px;
-  margin: auto;
   height: 500px;
   position: relative;
   border: 1px #fcf9db, solid;
   box-shadow: -3px 0px 0px #fcf9db;
   width: 100%;
   height: auto;
+  margin-top: 30px;
 }
 h1 {
   position: static;
@@ -29,23 +29,35 @@ h1 {
   gap: 5px;
 }
 div#game-info {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
+}
+#game-info img {
+  border-radius: 2em;
 }
 
 #remove-button {
   /* background-color: black;
   border: none; */
-  font-size: 25px;
+  background-color: black;
+  border: none;
+  padding-top: 30px;
+}
+#remove-button img {
+  width: 90px;
+  height: auto;
 }
 
 /* Desktop  */
-@media screen and (width >= 400px) {
+@media screen and (min-width: 1280px) {
   .card-game {
     width: 35em;
     margin: 2em auto;
   }
-
   #game-img {
     width: 17em;
+  }
+  #remove-button img {
+    width: 140px;
+    height: auto;
   }
 }

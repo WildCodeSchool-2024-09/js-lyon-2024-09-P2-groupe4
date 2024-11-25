@@ -25,8 +25,8 @@ const DisplayGame = ({ selectedGameId }: { selectedGameId: number }) => {
 
   return (
     <div className="display-game">
-      <button type="button" onClick={() => setSelectedGameId(null)}>
-        Retour à la liste
+      <button id="return" type="button" onClick={() => setSelectedGameId(null)}>
+        <img src="src\assets\images\Retour.png" alt="Return" />
       </button>
       <div className="game-details">
         <h2>{displayedGame.title}</h2>

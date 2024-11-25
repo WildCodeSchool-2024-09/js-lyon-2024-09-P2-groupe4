@@ -22,7 +22,6 @@ const CardGame = ({ game }: GameProps) => {
   return (
     <div className="card-game">
       <div id="game-info">
-        <h2>Liste des jeux</h2>
         <h3>{game.title}</h3>
         <img
           id="game-img"
@@ -47,7 +46,7 @@ const CardGame = ({ game }: GameProps) => {
                 );
               }}
             >
-              Retirer des favoris
+              <img src="src\assets\images\Unlike.png" alt="Unlike" />
             </button>
           </div>
         </p>
