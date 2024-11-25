@@ -1,23 +1,40 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Importer useNavigate pour la redirection
 import "./Login.css";
-import "../assets/images/login.png";
+
+// Simulation d'une base de données
+const usersData = [
+  { username: "Samy", password: "Samy123" },
+  { username: "Eric", password: "Eric123" },
+  { username: "Seb", password: "Seb123" },
+  { username: "Sims", password: "Sims123" },
+];
 
 function Login() {
-  // Déclaration des états
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
   const navigate = useNavigate(); // Initialiser le hook navigate
+
+  // Fonction de validation des identifiants
+  const validateCredentials = (username: string, password: string) => {
+    // Vérifie si le nom d'utilisateur et le mot de passe correspondent à un utilisateur dans les données simulées
+    return usersData.some(
+      (user) => user.username === username && user.password === password,
+    );
+  };
 
   // Fonction de soumission du formulaire
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Logique de validation (ici, on suppose que la connexion est réussie)
+    // Validation des identifiants
     if (username && password) {
-      // Si les champs sont remplis, rediriger vers la page de jeux
-      navigate("/games"); // Rediriger vers "/games"
+      if (validateCredentials(username, password)) {
+        // Si la connexion est réussie, rediriger vers la page des jeux
+        navigate("/games");
+      } else {
+        alert("Nom d'utilisateur ou mot de passe incorrect");
+      }
     } else {
       alert("Veuillez remplir tous les champs");
     }
@@ -46,7 +63,7 @@ function Login() {
         <button className="button-login" type="submit">
           <img
             className="login-logo"
-            src="src/assets/images/login.png"
+            src="/assets/images/login.png" // Utilisation du chemin relatif dans public
             alt="Logo de connexion"
           />
         </button>

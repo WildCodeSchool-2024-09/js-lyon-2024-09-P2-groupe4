@@ -21,4 +21,5 @@ export function useIsOnline() {
   if (value === null) {
     throw new Error("useContext has to be used within a <IsOnlineProvider>");
   }
+  return value;
 }
