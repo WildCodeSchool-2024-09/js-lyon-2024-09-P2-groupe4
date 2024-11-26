@@ -11,12 +11,13 @@ const usersData = [
 ];
 
 function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState<string>(""); // Typage explicite
+  const [password, setPassword] = useState<string>("");
+  const [isOnline, setIsOnline] = useState<boolean>(false); // État modifiable
   const navigate = useNavigate(); // Initialiser le hook navigate
 
   // Fonction de validation des identifiants
-  const validateCredentials = (username: string, password: string) => {
+  const validateCredentials = (username: string, password: string): boolean => {
     // Vérifie si le nom d'utilisateur et le mot de passe correspondent à un utilisateur dans les données simulées
     return usersData.some(
       (user) => user.username === username && user.password === password,
@@ -30,8 +31,9 @@ function Login() {
     // Validation des identifiants
     if (username && password) {
       if (validateCredentials(username, password)) {
-        // Si la connexion est réussie, rediriger vers la page des jeux
-        navigate("/games");
+        setIsOnline(!isOnline); // Mettre à jour l'état "en ligne"
+        alert("Connexion réussie !");
+        navigate("/games"); // Redirection après succès
       } else {
         alert("Nom d'utilisateur ou mot de passe incorrect");
       }
@@ -63,11 +65,20 @@ function Login() {
         <button className="button-login" type="submit">
           <img
             className="login-logo"
-            src="src/assets/images/login.png" // Utilisation du chemin relatif dans public
+            src="src/assets/images/login.png" // Utilisation d'un chemin relatif public (sans 'src')
             alt="Logo de connexion"
           />
         </button>
       </form>
+
+      {/* Affichage du statut en ligne */}
+      <div className="status">
+        {isOnline ? (
+          <p className="online-status">🟢 En ligne</p>
+        ) : (
+          <p className="offline-status">🔴 Hors ligne</p>
+        )}
+      </div>
     </div>
   );
 }
