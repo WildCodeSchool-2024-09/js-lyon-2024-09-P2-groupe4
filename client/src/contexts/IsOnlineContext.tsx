@@ -8,7 +8,7 @@ interface IsOnlineContextType {
 const IsOnlineContext = createContext<IsOnlineContextType | null>(null);
 
 export function IsOnlineProvider({ children }: { children: React.ReactNode }) {
-  const [isOnline, setIsOnline] = useState<boolean>(false);
+  const [isOnline, setIsOnline] = useState<boolean>(true);
   return (
     <IsOnlineContext.Provider value={{ isOnline, setIsOnline }}>
       {children}
