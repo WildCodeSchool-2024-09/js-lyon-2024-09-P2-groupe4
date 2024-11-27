@@ -47,10 +47,10 @@ const DisplayGames = () => {
           <div
             key={game.id}
             className="game-card"
-            onClick={() => handleSelection(game.id)} // Clic souris
+            onClick={() => handleSelection(game.id)}
             onKeyDown={(event) => {
               if (event.key === "Enter" || event.key === " ") {
-                handleSelection(game.id); // Interaction clavier (Enter ou Espace)
+                handleSelection(game.id);
               }
             }}
           >
