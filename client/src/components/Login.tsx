@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importer useNavigate pour la redirection
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-// Simulation d'une base de données
 const usersData = [
   { username: "Samy", password: "Samy123" },
   { username: "Eric", password: "Eric123" },
@@ -11,10 +10,10 @@ const usersData = [
 ];
 
 function Login() {
-  const [username, setUsername] = useState<string>(""); // Typage explicite
+  const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [isOnline, setIsOnline] = useState<boolean>(false); // État modifiable
-  const navigate = useNavigate(); // Initialiser le hook navigate
+  const [isOnline, setIsOnline] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   // Fonction de validation des identifiants
   const validateCredentials = (username: string, password: string): boolean => {
@@ -24,16 +23,14 @@ function Login() {
     );
   };
 
-  // Fonction de soumission du formulaire
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Validation des identifiants
     if (username && password) {
       if (validateCredentials(username, password)) {
-        setIsOnline(!isOnline); // Mettre à jour l'état "en ligne"
+        setIsOnline(!isOnline);
         alert("Connexion réussie !");
-        navigate("/games"); // Redirection après succès
+        navigate("/games");
       } else {
         alert("Nom d'utilisateur ou mot de passe incorrect");
       }
@@ -65,13 +62,12 @@ function Login() {
         <button className="button-login" type="submit">
           <img
             className="login-logo"
-            src="src/assets/images/login.png" // Utilisation d'un chemin relatif public (sans 'src')
+            src="src/assets/images/login.png"
             alt="Logo de connexion"
           />
         </button>
       </form>
 
-      {/* Affichage du statut en ligne */}
       <div className="status">
         {isOnline ? (
           <div id="online-status">
@@ -79,13 +75,13 @@ function Login() {
             <p>Online</p>
           </div>
         ) : (
-          <p id="offline-status">
+          <div id="offline-status">
             <img
               src="src\assets\images\dragon_offline.png"
               alt="dragon_rouge"
             />
-            Offline
-          </p>
+            <p>Offline</p>
+          </div>
         )}
       </div>
     </div>
