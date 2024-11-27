@@ -50,9 +50,23 @@ h1 {
   width: 90px;
   height: auto;
 }
+/* Tablette */
+@media screen and (min-width: 768px) {
+  #game-info {
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+  img#game-img {
+    width: 30em;
+  }
+  div.card-game {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}
 
 /* Desktop  */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   main {
     display: flex;
     flex-wrap: wrap;

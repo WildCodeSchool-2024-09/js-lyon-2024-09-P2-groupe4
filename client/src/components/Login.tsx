@@ -74,10 +74,10 @@ function Login() {
       {/* Affichage du statut en ligne */}
       <div className="status">
         {isOnline ? (
-          <p id="online-status">
+          <div id="online-status">
             <img src="src\assets\images\dragon_online.png" alt="dragon_vert" />
-            Online
-          </p>
+            <p>Online</p>
+          </div>
         ) : (
           <p id="offline-status">
             <img

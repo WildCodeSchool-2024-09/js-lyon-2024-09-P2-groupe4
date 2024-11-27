@@ -39,8 +39,8 @@ button#return {
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
-  margin-left: 120px;
-  margin-right: 125px;
+  margin-left: 110px;
+  margin-right: 110px;
 }
 #return:hover {
   transform: scale(1.1);
@@ -49,10 +49,26 @@ button#return {
   width: 80px;
   height: auto;
 }
-@media screen and (min-width: 1200px) {
+/* Tablette */
+@media screen and (min-width: 768px) {
+  button#return {
+    margin-right: 280px;
+    margin-left: 280px;
+  }
   div.game-details img {
-    width: auto;
-    height: 300px;
+    width: 30em;
+    height: auto;
+  }
+  div.display-game {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  div.game-details img {
+    width: 35em;
+    height: auto;
   }
   div.display-game {
     margin-left: 400px;
