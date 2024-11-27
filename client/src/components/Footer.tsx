@@ -3,7 +3,7 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer className="footer">
-      <h2 className="julee-regular">© 2024 LES FANTASY WARRIORS</h2>
+      <h2 className="julee-regular">© 2024 LES FANTASY WARRIORS </h2>
       <div className="imagesRS">
         <a href="https://www.facebook.com/">
           <img
