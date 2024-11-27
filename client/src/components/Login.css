@@ -27,21 +27,60 @@ form {
 }
 
 .login-logo {
-  height: 12em;
+  height: 10em;
 }
 
-@media screen and (min-width: 600px) {
+#offline-status {
+  color: #fcf9db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#offline-status img {
+  width: 5em;
+}
+
+/* version tablette */
+@media (min-width: 768px) {
   .login-logo {
-    height: 12em;
+    height: 10em;
+  }
+  #offline-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
+  #offline-status img {
+    width: 5em;
+  }
   .username,
   .password {
     width: 20em;
   }
 }
-@media (min-width: 1200px) {
+
+/* version desktop */
+@media (min-width: 1024px) {
   .login-logo {
-    height: 12em;
+    height: 13em;
+  }
+
+  #offline-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  #offline-status img {
+    width: 10em;
+  }
+  #offline-status p {
+    padding: 0;
+    font-size: 3em;
   }
 }
