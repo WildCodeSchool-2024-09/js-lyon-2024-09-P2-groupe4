@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { useIsOnline } from "../contexts/IsOnlineContext";
 
 function Footer() {
   const { isOnline } = useIsOnline();
