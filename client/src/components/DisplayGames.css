@@ -90,6 +90,7 @@ div.games-list {
 
 #button-right:hover {
   animation: slideRight 0.3s ease-in-out forwards;
+  cursor: pointer;
 }
 
 #button-right {
@@ -98,6 +99,7 @@ div.games-list {
 
 #button-left:hover {
   animation: slideLeft 0.3s ease-in-out forwards;
+  cursor: pointer;
 }
 
 #button-left {
