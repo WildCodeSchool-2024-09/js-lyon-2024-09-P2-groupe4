@@ -6,7 +6,7 @@ import "./components/CardGame.css";
 import "./components/Footer.css";
 import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
-import { GamesProvider } from "./components/GamesContext";
+import { GamesProvider } from "./contexts/GamesContext";
 import Header from "./components/Header";
 import { FavoritesGamesProvider } from "./contexts/FavoritesGamesContext";
 import { IsOnlineProvider } from "./contexts/IsOnlineContext";

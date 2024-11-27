@@ -1,6 +1,6 @@
 import { useState } from "react";
 import DisplayGame from "./DisplayGame";
-import { useGames } from "./GamesContext";
+import { useGames } from "../contexts/GamesContext";
 
 const DisplayGames = () => {
   const { games, selectedGameId, setSelectedGameId, isLoading, error } =
