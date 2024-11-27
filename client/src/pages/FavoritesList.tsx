@@ -1,5 +1,5 @@
+import CardGame from "../components/CardGame";
 import { useFavoritesGames } from "../contexts/FavoritesGamesContext";
-import CardGame from "./CardGame";
 import { useGames } from "../contexts/GamesContext";
 
 function FavoritesList() {
