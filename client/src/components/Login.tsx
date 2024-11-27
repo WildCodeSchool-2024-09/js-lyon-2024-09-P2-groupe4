@@ -70,9 +70,18 @@ function Login() {
 
       <div className="status">
         {isOnline ? (
-          <p className="online-status">🟢 En ligne</p>
+          <p id="online-status">
+            <img src="src\assets\images\dragon_online.png" alt="dragon_vert" />
+            Online
+          </p>
         ) : (
-          <p className="offline-status">🔴 Hors ligne</p>
+          <p id="offline-status">
+            <img
+              src="src\assets\images\dragon_offline.png"
+              alt="dragon_rouge"
+            />
+            Offline
+          </p>
         )}
       </div>
     </div>

@@ -1,4 +1,3 @@
-import { useIsOnline } from "../contexts/IsOnlineContext"; // Import du contexte
 import "./Footer.css";
 
 function Footer() {
