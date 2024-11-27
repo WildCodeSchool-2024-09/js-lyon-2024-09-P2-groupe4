@@ -4,22 +4,22 @@ div#logo {
   margin-top: 20px;
 }
 #logo img {
-  width: 250px;
+  width: 180px;
 }
 img#home {
-  width: 50px;
+  width: 40px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 }
 img#favoris {
-  width: 70px;
+  width: 60px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 }
 img#logout {
-  width: 60px;
+  width: 50px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
@@ -41,15 +41,34 @@ img#logout {
   align-items: center;
   gap: 1em;
   margin-top: 40px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 70px;
+  margin-right: 70px;
   margin-bottom: 30px;
 }
 
 a {
   padding-right: 0px;
 }
-@media screen and (min-width: 1280px) {
+#online-status {
+  font-family: "Julee", cursive;
+  color: #fcf9db;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#online-status img {
+  width: 5em;
+}
+/* Version Tablette */
+@media screen and (min-width: 768px) {
+  #nav {
+    margin-left: 250px;
+    margin-right: 250px;
+  }
+}
+/* Version Desktop */
+@media screen and (min-width: 1024px) {
   img#home {
     width: 100px;
   }
@@ -65,5 +84,8 @@ a {
   #nav {
     margin-left: 450px;
     margin-right: 450px;
+  }
+  #online-status img {
+    width: 10em;
   }
 }

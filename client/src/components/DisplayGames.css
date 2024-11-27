@@ -87,25 +87,40 @@ div.games-list {
     transform: translateX(0);
   }
 }
+/* Tablette */
+@media screen and (min-width: 768px) {
+  div.games-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+  }
 
-#button-right:hover {
-  animation: slideRight 0.3s ease-in-out forwards;
-  cursor: pointer;
-}
+  div.game-card {
+    width: 20em;
+  }
+  div.game-card img {
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
 
-#button-right {
-  animation: slideBackRight 0.3s ease-in-out;
+  .mainCard {
+    background-color: black;
+    color: #fcf9db;
+    text-align: center;
+    margin-top: 0;
+    align-items: center;
+  }
+  div.game-details p {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
 }
-
-#button-left:hover {
-  animation: slideLeft 0.3s ease-in-out forwards;
-  cursor: pointer;
-}
-
-#button-left {
-  animation: slideBackLeft 0.3s ease-in-out;
-}
-@media (min-width: 1280px) {
+/* Desktop */
+@media screen and (min-width: 1024px) {
   div.games-list {
     display: grid;
     grid-template-columns: 2fr 2fr;
@@ -118,10 +133,11 @@ div.games-list {
     border-radius: 10%;
     gap: 1em;
     width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   div.game-card img {
-    width: 27em;
-    height: 17em;
+    width: 100%;
     border-radius: 10%;
   }
   h1.libre-baskerville-regular {
@@ -130,14 +146,10 @@ div.games-list {
     margin-top: 0;
   }
 
-  button {
-    gap: 2em;
-  }
-
   div.button {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    margin-left: 40px;
   }
   h3 {
     font-size: xx-large;
@@ -145,37 +157,21 @@ div.games-list {
   .button img {
     width: 140px;
   }
-}
-
-@media screen and (min-width: 1024px) {
-  div.games-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 2em;
-    width: 608px;
+  #button-right:hover {
+    animation: slideRight 0.3s ease-in-out forwards;
+    cursor: pointer;
   }
 
-  div.game-card {
-    width: 16em;
+  #button-right {
+    animation: slideBackRight 0.3s ease-in-out;
   }
 
-  .mainCard {
-    background-color: black;
-    color: #fcf9db;
-    text-align: center;
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  #button-left:hover {
+    animation: slideLeft 0.3s ease-in-out forwards;
+    cursor: pointer;
   }
-}
 
-@media screen and (max-width: 500px) {
-  div.games-list {
-    display: flex;
-    flex-direction: column;
+  #button-left {
+    animation: slideBackLeft 0.3s ease-in-out;
   }
 }
