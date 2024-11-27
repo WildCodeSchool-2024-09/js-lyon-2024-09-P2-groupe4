@@ -1,5 +1,7 @@
 p {
   text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .card-game {
   display: flex;
@@ -9,14 +11,12 @@ p {
   border-radius: 20px;
   color: #fcf9db;
   padding: 0.5em;
-  width: 300px;
-  height: 500px;
   position: relative;
   border: 1px #fcf9db, solid;
   box-shadow: -3px 0px 0px #fcf9db;
-  width: 100%;
-  height: auto;
   margin-top: 30px;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 h1 {
   position: static;
@@ -28,19 +28,23 @@ h1 {
   align-items: center;
   gap: 5px;
 }
-div#game-info {
-  padding-bottom: 30px;
-}
 #game-info img {
   border-radius: 2em;
+  width: 300px;
 }
 
 #remove-button {
   /* background-color: black;
   border: none; */
-  background-color: black;
+  background-color: transparent;
   border: none;
   padding-top: 30px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+#remove-button:hover {
+  transform: scale(1.1);
 }
 #remove-button img {
   width: 90px;
@@ -48,16 +52,28 @@ div#game-info {
 }
 
 /* Desktop  */
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .card-game {
     width: 35em;
-    margin: 2em auto;
+    margin: 1em;
   }
-  #game-img {
-    width: 17em;
+  #game-info img {
+    width: 450px;
   }
   #remove-button img {
     width: 140px;
     height: auto;
+  }
+  p {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 }

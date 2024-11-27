@@ -16,7 +16,7 @@ div.game-details {
 div.game-details img {
   width: 250px;
   height: auto;
-  border-radius: 10%;
+  border-radius: 2em;
 }
 div.display-game {
   margin-left: 20px;
@@ -33,9 +33,17 @@ a {
   border: none;
   font-size: 25px;
 }
-#return {
-  background-color: black;
+button#return {
+  background-color: transparent;
   border: none;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  margin-left: 120px;
+  margin-right: 125px;
+}
+#return:hover {
+  transform: scale(1.1);
 }
 #return img {
   width: 80px;
@@ -61,5 +69,13 @@ a {
   #return img {
     width: 140px;
     height: auto;
+  }
+  button#return {
+    margin-left: 210px;
+    margin-right: 200px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
   }
 }

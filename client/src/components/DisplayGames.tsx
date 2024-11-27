@@ -64,10 +64,10 @@ const DisplayGames = () => {
         ))}
       </div>
       <div className="button">
-        <button type="button" onClick={onPrevious}>
+        <button id="button-left" type="button" onClick={onPrevious}>
           <img src="src\assets\images\Précédent.png" alt="Forward" />
         </button>
-        <button type="button" onClick={onNext}>
+        <button id="button-right" type="button" onClick={onNext}>
           <img src="src\assets\images\Suivant.png" alt="Next" />
         </button>
       </div>
