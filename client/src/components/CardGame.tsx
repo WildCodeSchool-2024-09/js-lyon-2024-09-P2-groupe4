@@ -1,3 +1,4 @@
+import clickSound from "/src/assets/chocobo_wark.mp3";
 import { useFavoritesGames } from "../contexts/FavoritesGamesContext";
 
 interface GameProps {
@@ -18,6 +19,12 @@ interface GameProps {
 
 const CardGame = ({ game }: GameProps) => {
   const { favoritesGames, setFavoritesGames } = useFavoritesGames();
+
+  const playSound = () => {
+    // Crée une nouvelle instance Audio
+    const audio = new Audio(clickSound);
+    audio.play(); // Joue le son
+  };
 
   return (
     <div className="card-game">
@@ -43,7 +50,7 @@ const CardGame = ({ game }: GameProps) => {
           id="remove-button"
           type="button"
           onClick={() => {
-            // Supprime le jeu sélectionné de la liste des favoris.
+            playSound();
             setFavoritesGames(favoritesGames.filter((id) => id !== game.id));
           }}
         >
