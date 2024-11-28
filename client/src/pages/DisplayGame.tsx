@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useFavoritesGames } from "../contexts/FavoritesGamesContext";
-import { useGames } from "./GamesContext";
+import { useGames } from "../contexts/GamesContext";
 
 const DisplayGame = ({ selectedGameId }: { selectedGameId: number }) => {
   const { games, setSelectedGameId } = useGames();

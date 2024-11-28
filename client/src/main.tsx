@@ -7,9 +7,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
-import DisplayGames from "./components/DisplayGames";
-import FavoritesList from "./components/FavoritesList";
-import Login from "./components/Login";
+import DisplayGames from "./pages/DisplayGames";
+import FavoritesList from "./pages/FavoritesList";
+import Login from "./pages/Login";
 
 // import DisplayGame from "./components/DisplayGame";
 
