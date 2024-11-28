@@ -43,6 +43,7 @@ const CardGame = ({ game }: GameProps) => {
           id="remove-button"
           type="button"
           onClick={() => {
+            // Supprime le jeu sélectionné de la liste des favoris.
             setFavoritesGames(favoritesGames.filter((id) => id !== game.id));
           }}
         >

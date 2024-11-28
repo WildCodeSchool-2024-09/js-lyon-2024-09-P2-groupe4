@@ -20,7 +20,7 @@ const DisplayGame = ({ selectedGameId }: { selectedGameId: number }) => {
   }
 
   if (!displayedGame) {
-    return <p>Jeu non trouvé</p>;
+    return <p>Game not found</p>;
   }
 
   return (
@@ -61,14 +61,7 @@ const DisplayGame = ({ selectedGameId }: { selectedGameId: number }) => {
           >
             Game url
           </a>
-          <button
-            id="like-button"
-            type="button"
-            onClick={toggle}
-            aria-label={
-              toggleFavorite ? "Retirer du favori" : "Ajouter aux favoris"
-            }
-          >
+          <button id="like-button" type="button" onClick={toggle}>
             {toggleFavorite ? "🧡" : "🤍"}
           </button>
         </p>

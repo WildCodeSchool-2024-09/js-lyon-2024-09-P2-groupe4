@@ -1,7 +1,7 @@
 import "./components/DisplayGames.css";
 import "./components/DisplayGame.css";
 import "./App.css";
-import "./header.css";
+import "./components/header.css";
 import "./components/CardGame.css";
 import "./components/Footer.css";
 import { Outlet } from "react-router-dom";
