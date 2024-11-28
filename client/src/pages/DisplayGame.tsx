@@ -1,4 +1,5 @@
 import { useState } from "react";
+import clickSound from "/src/assets/chocobo_wark.mp3"; // Import du fichier audio
 import { useFavoritesGames } from "../contexts/FavoritesGamesContext";
 import { useGames } from "../contexts/GamesContext";
 
@@ -9,7 +10,13 @@ const DisplayGame = ({ selectedGameId }: { selectedGameId: number }) => {
 
   const [toggleFavorite, setToggleFavorite] = useState(false);
 
+  const playSound = () => {
+    const audio = new Audio(clickSound);
+    audio.play();
+  };
+
   function toggle() {
+    playSound(); // Joue le son lorsque le bouton est cliqué
     if (toggleFavorite === false) {
       setToggleFavorite(true);
       setFavoritesGames([...favoritesGames, selectedGameId]);

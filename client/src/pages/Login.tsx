@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../components/Login.css";
+import successSound from "/src/assets/final-fantasy-vii-victory-fanfare-1.mp3"; // Import du fichier audio
 
 const usersData = [
   { username: "Samy", password: "Samy123" },
@@ -17,17 +18,21 @@ function Login() {
 
   // Fonction de validation des identifiants
   const validateCredentials = (username: string, password: string): boolean => {
-    // Vérifie si le nom d'utilisateur et le mot de passe correspondent à un utilisateur dans les données simulées deux paramètres obligatoires.
+    // Vérifie si le nom d'utilisateur et le mot de passe correspondent à un utilisateur dans les données simulées
     return usersData.some(
       (user) => user.username === username && user.password === password,
     );
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
     if (username && password) {
       if (validateCredentials(username, password)) {
+        const audio = new Audio(successSound); // Crée une nouvelle instance Audio
+        audio.play(); // Joue le son
         setIsOnline(!isOnline);
-        alert("Connection successfull !");
+        alert("Connection successful !");
         navigate("/games");
       } else {
         alert("Incorrect username or password");
