@@ -13,7 +13,7 @@ function Header() {
         <Link to="/games">
           <img id="home" src="src\assets\images\Home.png" alt="Home" />
         </Link>
-        <Link to="/favoris">
+        <Link to="/favorites">
           <img
             id="favorites"
             src="src\assets\images\Favorites.png"

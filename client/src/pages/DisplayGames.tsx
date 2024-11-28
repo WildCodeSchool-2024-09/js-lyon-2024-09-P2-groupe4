@@ -8,14 +8,14 @@ const DisplayGames = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const onPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex - 4 < 0 ? games.length - 4 : prevIndex - 4,
+    setCurrentIndex((currentIndex) =>
+      currentIndex - 4 < 0 ? games.length - 4 : currentIndex - 4,
     );
   };
 
   const onNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex + 4 >= games.length ? 0 : prevIndex + 4,
+    setCurrentIndex((currentIndex) =>
+      currentIndex + 4 >= games.length ? 0 : currentIndex + 4,
     );
   };
 

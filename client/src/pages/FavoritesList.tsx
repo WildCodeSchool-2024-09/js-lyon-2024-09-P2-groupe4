@@ -6,6 +6,7 @@ function FavoritesList() {
   const { favoritesGames } = useFavoritesGames();
   const { games } = useGames();
 
+  // si l'id n'est pas dans le tableau il est ajouté.
   function withoutDuplicate() {
     const result: number[] = [];
     for (const item of favoritesGames) {
@@ -16,11 +17,11 @@ function FavoritesList() {
     return result;
   }
 
-  const favforitesGamesWithoutDuplicate = withoutDuplicate();
+  const favoritesGamesWithoutDuplicate = withoutDuplicate();
 
   return (
     <>
-      {favforitesGamesWithoutDuplicate.map((favoriteGameId) => {
+      {favoritesGamesWithoutDuplicate.map((favoriteGameId) => {
         const game = games.find((g) => g.id === favoriteGameId);
         return game ? <CardGame key={favoriteGameId} game={game} /> : null;
       })}

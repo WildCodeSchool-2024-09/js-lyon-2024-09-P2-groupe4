@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: center;
   color: #fcf9db;
-  background-color: black;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -38,26 +37,21 @@
   font-weight: 400;
   font-style: italic;
 }
-
+/* Tablette */
 @media screen and (min-width: 768px) {
   .footer {
-    font-size: xx-large;
+    font-size: x-large;
   }
   .imagesRS {
     margin-left: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }
+/* Desktop */
 @media screen and (min-width: 1024px) {
   .footer {
     font-size: xx-large;
   }
   .imagesRS {
     margin-left: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }

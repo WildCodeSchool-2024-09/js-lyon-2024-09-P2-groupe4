@@ -35,7 +35,7 @@ img#logout {
   transform: scale(1.1);
 }
 #nav {
-  border: 2px solid, #fcf9db;
+  border: 2px solid #fcf9db;
   border-radius: 2em;
   display: flex;
   justify-content: center;
@@ -61,14 +61,14 @@ a {
 #online-status img {
   width: 5em;
 }
-/* Version Tablette */
+/* Tablette */
 @media screen and (min-width: 768px) {
   #nav {
     margin-left: 250px;
     margin-right: 250px;
   }
 }
-/* Version Desktop */
+/* Desktop */
 @media screen and (min-width: 1024px) {
   img#home {
     width: 100px;
