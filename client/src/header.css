@@ -12,7 +12,7 @@ img#home {
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 }
-img#favoris {
+img#favorites {
   width: 60px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
@@ -27,7 +27,7 @@ img#logout {
 #logout:hover {
   transform: scale(1.1);
 }
-#favoris:hover {
+#favorites:hover {
   transform: scale(1.1);
 }
 #home:hover {
@@ -35,7 +35,7 @@ img#logout {
 }
 #nav {
   border: 2px solid, #fcf9db;
-  border-radius: 5em;
+  border-radius: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,11 +72,11 @@ a {
   img#home {
     width: 100px;
   }
-  img#favoris {
-    width: 140px;
+  img#favorites {
+    width: 160px;
   }
   img#logout {
-    width: 120px;
+    width: 100px;
   }
   #logo img {
     width: 500px;
@@ -87,5 +87,12 @@ a {
   }
   #online-status img {
     width: 10em;
+  }
+  #online-status {
+    flex-direction: row;
+  }
+  #online-status p {
+    padding: 0;
+    font-size: 3em;
   }
 }

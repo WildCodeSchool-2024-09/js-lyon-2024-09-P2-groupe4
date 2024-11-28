@@ -29,13 +29,13 @@ function Login() {
     if (username && password) {
       if (validateCredentials(username, password)) {
         setIsOnline(!isOnline);
-        alert("Connexion réussie !");
+        alert("Connection successful !");
         navigate("/games");
       } else {
-        alert("Nom d'utilisateur ou mot de passe incorrect");
+        alert("Incorrect username or password");
       }
     } else {
-      alert("Veuillez remplir tous les champs");
+      alert("Please complete all fields");
     }
   };
 
@@ -43,11 +43,11 @@ function Login() {
     <div className="div-form">
       <h1>Login Page</h1>
       <form onSubmit={handleSubmit} className="form">
-        <h2>USERNAME</h2>
+        <h2>Username</h2>
         <input
           type="text"
           className="username"
-          placeholder="Votre nom d'utilisateur"
+          placeholder="Your username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
@@ -55,7 +55,7 @@ function Login() {
         <input
           type="password"
           className="password"
-          placeholder="Votre mot de passe"
+          placeholder="Your password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />

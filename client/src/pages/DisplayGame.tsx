@@ -41,16 +41,16 @@ const DisplayGame = ({ selectedGameId }: { selectedGameId: number }) => {
             <strong>Genre :</strong> {displayedGame.genre}
           </li>
           <li>
-            <strong>Plateforme :</strong> {displayedGame.platform}
+            <strong>Plateform :</strong> {displayedGame.platform}
           </li>
           <li>
-            <strong>Éditeur :</strong> {displayedGame.publisher}
+            <strong>Publisher :</strong> {displayedGame.publisher}
           </li>
           <li>
-            <strong>Développeur :</strong> {displayedGame.developer}
+            <strong>Developer :</strong> {displayedGame.developer}
           </li>
           <li>
-            <strong>Date de sortie :</strong> {displayedGame.release_date}
+            <strong>Release date :</strong> {displayedGame.release_date}
           </li>
         </ul>
         <p>
@@ -59,7 +59,7 @@ const DisplayGame = ({ selectedGameId }: { selectedGameId: number }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Jouer au jeu
+            Game url
           </a>
           <button
             id="like-button"
