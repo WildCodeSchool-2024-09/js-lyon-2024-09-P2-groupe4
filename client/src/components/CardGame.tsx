@@ -36,20 +36,20 @@ const CardGame = ({ game }: GameProps) => {
           <a href={game.game_url} target="_blank" rel="noopener noreferrer">
             Game url
           </a>
-          <div id="buttons-bar">
-            <button
-              id="remove-button"
-              type="button"
-              onClick={() => {
-                setFavoritesGames(
-                  favoritesGames.filter((id) => id !== game.id),
-                );
-              }}
-            >
-              <img src="src\assets\images\Unlike.png" alt="Unlike" />
-            </button>
-          </div>
         </p>
+      </div>
+      <div id="buttons-bar">
+        <button
+          id="remove-button"
+          type="button"
+          onClick={() => {
+            setFavoritesGames(favoritesGames.filter((id) => id !== game.id));
+          }}
+        >
+          <div>
+            <img src="src\assets\images\Unlike.png" alt="Unlike" />
+          </div>
+        </button>
       </div>
     </div>
   );
