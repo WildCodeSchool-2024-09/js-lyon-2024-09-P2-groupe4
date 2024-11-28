@@ -18,7 +18,7 @@ function Login() {
 
   // Fonction de validation des identifiants
   const validateCredentials = (username: string, password: string): boolean => {
-    // Vérifie si le nom d'utilisateur et le mot de passe correspondent à un utilisateur dans les données simulées
+    // Vérifie si le nom d'utilisateur et le mot de passe correspondent à un utilisateur dans les données simulées deux paramètres obligatoires
     return usersData.some(
       (user) => user.username === username && user.password === password,
     );
@@ -32,7 +32,7 @@ function Login() {
         const audio = new Audio(successSound); // Crée une nouvelle instance Audio
         audio.play(); // Joue le son
         setIsOnline(!isOnline);
-        alert("Connection successful !");
+        alert("Connection successfull !");
         navigate("/games");
       } else {
         alert("Incorrect username or password");
