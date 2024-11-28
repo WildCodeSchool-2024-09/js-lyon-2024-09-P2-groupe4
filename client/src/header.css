@@ -7,16 +7,17 @@ div#logo {
   width: 180px;
 }
 img#home {
-  width: 40px;
+  width: 50px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 }
 img#favorites {
-  width: 60px;
+  width: 80px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
+  padding-top: 8px;
 }
 img#logout {
   width: 50px;
@@ -74,6 +75,7 @@ a {
   }
   img#favorites {
     width: 160px;
+    padding-top: 15px;
   }
   img#logout {
     width: 100px;

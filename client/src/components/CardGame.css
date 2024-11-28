@@ -36,7 +36,7 @@ h1 {
 #remove-button {
   background-color: transparent;
   border: none;
-  padding-top: 30px;
+  margin-top: 50px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
