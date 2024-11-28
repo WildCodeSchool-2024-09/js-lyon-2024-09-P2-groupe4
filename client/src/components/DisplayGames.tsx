@@ -41,7 +41,7 @@ const DisplayGames = () => {
 
   return (
     <div className="mainCard">
-      <h1 className="libre-baskerville-regular">Liste des jeux</h1>
+      <h1 className="libre-baskerville-regular">List of games</h1>
       <div className="games-list">
         {displayedGames.map((game) => (
           <div

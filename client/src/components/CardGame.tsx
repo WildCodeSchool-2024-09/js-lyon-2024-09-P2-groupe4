@@ -34,7 +34,7 @@ const CardGame = ({ game }: GameProps) => {
         <p>Publisher: {game.publisher}</p>
         <p>
           <a href={game.game_url} target="_blank" rel="noopener noreferrer">
-            Lien vers le jeu
+            Game url
           </a>
           <div id="buttons-bar">
             <button

@@ -71,9 +71,11 @@ h1 {
     justify-content: center;
   }
 
-  .card-game {
+  div.card-game {
     width: 35em;
     margin: 1em;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   #game-info img {
     width: 450px;
