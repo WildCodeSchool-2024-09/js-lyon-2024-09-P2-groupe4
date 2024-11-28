@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
+import "../components/Login.css";
 
 const usersData = [
   { username: "Samy", password: "Samy123" },
