@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../components/Login.css";
 import successSound from "/src/assets/final-fantasy-vii-victory-fanfare-1.mp3"; // Import du fichier audio
+import vnpp_gandalf from "/src/assets/vnpp_gandalf.mp3";
 
 const usersData = [
   { username: "Samy", password: "Samy123" },
@@ -35,6 +36,8 @@ function Login() {
         alert("Connection successfull !");
         navigate("/games");
       } else {
+        const gandalf = new Audio(vnpp_gandalf);
+        gandalf.play();
         alert("Incorrect username or password");
       }
     } else {
