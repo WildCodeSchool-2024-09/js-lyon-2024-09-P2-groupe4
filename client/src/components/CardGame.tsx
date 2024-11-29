@@ -51,6 +51,7 @@ const CardGame = ({ game }: GameProps) => {
           type="button"
           onClick={() => {
             playSound();
+            //Supprime le jeu sélectionné de la liste des favoris
             setFavoritesGames(favoritesGames.filter((id) => id !== game.id));
           }}
         >
